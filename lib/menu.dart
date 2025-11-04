@@ -16,19 +16,25 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //Widget 2
       appBar: AppBar(
+        //Widget 3
         title: const Text(
+          //Widget 4
           'Football Shop',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: Padding(
+        // Widget 5
         padding: const EdgeInsets.all(16.0),
         child: Column(
+          // Widget 6
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Row(
+              // Widget 7
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 InfoCard(title: 'NPM', content: npm),
@@ -36,8 +42,9 @@ class MyHomePage extends StatelessWidget {
                 InfoCard(title: 'Class', content: className),
               ],
             ),
-            const SizedBox(height: 16.0),
+            const SizedBox(height: 16.0), // Widget 8
             Center(
+              // Widget 9
               child: Column(
                 children: [
                   const Padding(
@@ -51,6 +58,7 @@ class MyHomePage extends StatelessWidget {
                     ),
                   ),
                   GridView.count(
+                    // Widget 10
                     primary: true,
                     padding: const EdgeInsets.all(20),
                     crossAxisSpacing: 10,
@@ -71,6 +79,7 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
+// Widget 11
 class InfoCard extends StatelessWidget {
   final String title;
   final String content;
@@ -82,6 +91,7 @@ class InfoCard extends StatelessWidget {
     return Card(
       elevation: 2.0,
       child: Container(
+        // Widget 12
         width: MediaQuery.of(context).size.width / 3.5,
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -128,6 +138,7 @@ class ItemCard extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                // Widget 13
                 Icon(item.icon, color: Colors.white, size: 30.0),
                 const Padding(padding: EdgeInsets.all(3)),
                 Text(

@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // Widget 1
       title: 'Football Shop',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch(
