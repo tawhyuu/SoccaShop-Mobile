@@ -14,14 +14,28 @@ class LeftDrawer extends StatelessWidget {
             decoration: BoxDecoration(color: Colors.blue),
             child: Column(
               children: [
-                Text(
-                  'SoccaShop',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.orange,
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Socca',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFFFF9A42),
+                      ),
+                    ),
+                    Text(
+                      'Shop',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF1F4590), // dark blue
+                      ),
+                    ),
+                  ],
                 ),
                 Padding(padding: EdgeInsets.all(10)),
                 Text(
