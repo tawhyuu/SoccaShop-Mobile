@@ -61,6 +61,19 @@ class _AddProductFormState extends State<AddProductForm> {
                     if (value == null || value.isEmpty) {
                       return "Nama produk tidak boleh kosong!";
                     }
+                    if (value.length <= 4) {
+                      // Asumsi paling pendek adalah nama topi
+                      return "Nama produk terlalu pendek";
+                    }
+                    if (value.length >= 150) {
+                      return "Nama produk terlalu panjang";
+                    }
+                    var words = value.split(' ');
+                    for (var word in words) {
+                      if (word.length > 45) {
+                        return "Maksimal 1 kata adalah 45 huruf";
+                      }
+                    }
                     return null;
                   },
                 ),
@@ -121,6 +134,9 @@ class _AddProductFormState extends State<AddProductForm> {
                     if (value == null || value.isEmpty) {
                       return "Deskripsi tidak boleh kosong!";
                     }
+                    if (value.length <= 10) {
+                      return "Deskripsi produk terlalu singkat";
+                    }
                     return null;
                   },
                 ),
@@ -155,7 +171,7 @@ class _AddProductFormState extends State<AddProductForm> {
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
                   decoration: InputDecoration(
-                    hintText: "URL Thumbnail (opsional)",
+                    hintText: "URL Thumbnail",
                     labelText: "URL Thumbnail",
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0),
@@ -165,6 +181,19 @@ class _AddProductFormState extends State<AddProductForm> {
                     setState(() {
                       _thumbnail = value!;
                     });
+                  },
+                  validator: (String? value) {
+                    if (value == null || value.isEmpty) {
+                      return "URL Thumbnail tidak boleh kosong!";
+                    }
+                    if (value.length <= 10) {
+                      return "URL Thumbnail terlalu pendek";
+                    }
+                    var leading = value.substring(0, 5);
+                    if (!leading.contains("http") ||
+                        !leading.contains("https")) {
+                      return "URL Thumbnail tidak valid";
+                    }
                   },
                 ),
               ),
